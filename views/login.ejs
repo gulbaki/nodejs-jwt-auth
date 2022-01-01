@@ -1,5 +1,50 @@
 <%- include('partials/header') -%>
 
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form class="needs-validation" novalidate>
+          <div class="divider d-flex align-items-center my-4">
+            <h1 class="text-center fw-bold  mb-0">Login</h1>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email"   name="email" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" required />
+            <label class="form-label"   for="form3Example3">Email address</label>
+          </div>
+          <div class="email error" style="color: red; font:italic;"></div>
+          
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password"    name="password" class="form-control form-control-lg"
+              placeholder="Enter password " required />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+          <div class="password error" style="color: red; font:italic;"></div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button  class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup"
+                class="link-danger">Register</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- 
 <form>
   <h2>Login</h2>
   <label for="email">Email</label>
@@ -11,16 +56,16 @@
   <div class="password error"></div>
 
   <button>Login</button>
-</form>
+</form> -->
 
 <script>
   const form = document.querySelector("form");
+
   const emailError = document.querySelector(".email.error");
   const passwordError = document.querySelector(".password.error");
-
+  console.log(passwordError);
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
 
     //reset errors
     emailError.textContent = "";
@@ -38,12 +83,12 @@
       });
       const data = await res.json();
       if (data.errors) {
-        emailError.textContent = data.errors.email;
+      //  emailError.textContent = data.errors.email;
         passwordError.textContent = data.errors.password;
       }
       console.log(data);
       if (data.user) {
-      // location.assign("/");
+     location.assign("/");
       }
     } catch (err) {
       console.log(err);
