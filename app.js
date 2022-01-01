@@ -19,15 +19,3 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 app.get('/', (req, res) => res.render('home'));
 app.use(authRoutes);
 
-
-app.get('/set-cookies', (req, res) => {
-    
-    res.cookie('newUser', false);
-
-    res.send('you got the cookies')
-});
-
-
-app.get('/read-cookies', (req, res) => {
-
-});
