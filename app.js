@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 
 const uri = "mongodb+srv://root:root@cluster0.so5im.mongodb.net/node-auth";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-.then((res) => app.listen( process.env.PORT || 3000))
+.then((res) => app.listen( process.env.PORT || 3000, () =>  console.log(`Example app listening on port ${port}!`)))
 .catch((err) => console.log(err));
 
 // routes
