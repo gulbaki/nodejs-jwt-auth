@@ -10,11 +10,12 @@ Expressjs + Mongoose + JSON Web Token Authentication
 Preparation
 ------------
 ```
-npm install
+composer install
 ```
 
 Starting application
 --------------------
 ```
-nodemon app.js
+php artisan serve 
+
 ```
