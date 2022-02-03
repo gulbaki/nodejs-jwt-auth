@@ -16,6 +16,6 @@ npm install
 Starting application
 --------------------
 ```
-php artisan serve 
+node app.js 
 
 ```
